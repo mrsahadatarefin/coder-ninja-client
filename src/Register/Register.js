@@ -19,6 +19,7 @@ createUser(email,password)
     .then(result =>{
         const userId =result.user ;
         console.log(userId);
+        form.reset()
     })
     
 .catch(e =>console.error(e));
