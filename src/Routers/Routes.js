@@ -3,6 +3,7 @@ import Course from "../Components/Course/Course";
 import CourseD from "../Components/CourseD/CourseD";
 import Faq from "../Components/Faq/Faq";
 import Home from "../Components/Home/Home";
+import NothingPage from "../Components/NothingPage";
 import Main from "../layout/Main";
 import LOgin from "../Login/LOgin";
 import Register from "../Register/Register";
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
       {
         path: "register",
         element: <Register></Register>,
+      },
+      {
+        path:"*",
+        element:<NothingPage></NothingPage>
       },
     ],
   },
