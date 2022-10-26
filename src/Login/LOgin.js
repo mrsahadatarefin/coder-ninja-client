@@ -46,9 +46,7 @@ const LOgin = () => {
         Submit
       </Button>
       <br />
-      <Button variant="primary" type="submit" style={{ marginTop: "10px" }}>
-        sing in with google
-      </Button>
+      
     </Form>
   );
 };
