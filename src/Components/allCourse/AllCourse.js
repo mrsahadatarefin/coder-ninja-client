@@ -8,13 +8,13 @@ const AllCourse = ({ course }) => {
   const { id, name, title, description, image } = course;
 
   return (
-    <div>
+    
       <Container>
         <Row>
           <Col lg="4">
-            <div style={{ margin: "20px" }}>
-              <h4  style={{ margin: "20px" }}>
-                <Link to={`/details/${id}`} style={{color:'black',margin:'20px'}}>{name} </Link>
+            <div style={ {height:"300px"}}>
+              <h4>
+                <Link to={`/details/${id}`}  style={{color:'black',margin:'20px'}}>{name} </Link>
               </h4>
             </div>
           </Col>
@@ -41,7 +41,7 @@ const AllCourse = ({ course }) => {
           </Col>
         </Row>
       </Container>
-    </div>
+   
   );
 };
 

@@ -1,13 +1,26 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import { AuthContext } from "../Contexts/Authprovider/AuthProvider";
 const Register = () => {
-    return (
-        <Form style={{ margin:"auto",width:'30vw',}}>
+  const { providerLogin } = useContext(AuthContext);
+  const googleProvider = new GoogleAuthProvider()
+  const handleGoogleSingIn = () => {
+
+    providerLogin(googleProvider)
+
+    .then(result =>{
+      const user = result.user ;
+      console.log(user) 
+    })
+    .catch (error => console.error(error))
+  };
+  return (
+    <Form style={{ margin: "auto", width: "30vw" }}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>name</Form.Label>
         <Form.Control type="name" placeholder="Enter name" />
-        
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -26,12 +39,17 @@ const Register = () => {
       </Form.Group>
       <Button variant="primary" type="submit">
         Submit
-      </Button><br />
-      <Button variant="primary" type="submit" style={{marginTop:"10px"}}>
-     sing in with google
+      </Button>
+      <br />
+      <Button
+        onClick={handleGoogleSingIn}
+        variant="primary"
+        style={{ marginTop: "10px" }}
+      >
+        sing in with google
       </Button>
     </Form>
-    );
+  );
 };
 
 export default Register;

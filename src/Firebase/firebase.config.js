@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA2c8GkZeLz8EYeYiz92bLsbxFLdRIuzFc",
-  authDomain: "coder-ninja.firebaseapp.com",
-  projectId: "coder-ninja",
-  storageBucket: "coder-ninja.appspot.com",
-  messagingSenderId: "478922394857",
-  appId: "1:478922394857:web:a40eb0816c7566c185f478"
+  apiKey: "AIzaSyDVl3ArSHL1gGBqBuroR6N-7saq2NtWSpM",
+  authDomain: "coder-ninja-a.firebaseapp.com",
+  projectId: "coder-ninja-a",
+  storageBucket: "coder-ninja-a.appspot.com",
+  messagingSenderId: "695935266347",
+  appId: "1:695935266347:web:b7f1e12242f38ffdc4046e"
 };
 
 // Initialize Firebase
