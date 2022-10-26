@@ -6,6 +6,7 @@ import Home from "../Components/Home/Home";
 import Main from "../layout/Main";
 import LOgin from "../Login/LOgin";
 import Register from "../Register/Register";
+import PriviteRoute from "./PriviteRoute/PriviteRoute";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,11 @@ export const router = createBrowserRouter([
       { path: "/", element: <Home></Home> },
       {
         path: "/course",
-        element: <Course></Course>,
+        element: (
+          <PriviteRoute>
+            <Course></Course>
+          </PriviteRoute>
+        ),
         loader: () => fetch("http://localhost:5000/allCourse"),
       },
       {
@@ -29,13 +34,13 @@ export const router = createBrowserRouter([
         element: <Faq></Faq>,
       },
       {
-        path:'/login',
-        element:<LOgin></LOgin>
+        path: "/login",
+        element: <LOgin></LOgin>,
       },
       {
-        path:"register",
-        element:<Register></Register>
-      }
+        path: "register",
+        element: <Register></Register>,
+      },
     ],
   },
 ]);
