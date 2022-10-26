@@ -1,10 +1,19 @@
 import React from "react";
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Contexts/Authprovider/AuthProvider";
 
 const Header = () => {
+  const {logOut} = useContext(AuthContext)
+  const handleLogOut= ()=>{
+logOut()
+.then(()=>{})
+.catch(error=>console.error(error))
+  }
+  
   return (
     <div>
       <Navbar bg="dark" variant="dark" style={{ width: "100vw" }}>
@@ -29,6 +38,9 @@ const Header = () => {
             </Nav.Link>
             <Nav.Link>
               <Link to={"login"} style={{color:'white',textDecoration:'none'}}>Login</Link>{" "}
+            </Nav.Link>
+            <Nav.Link onClick={handleLogOut}  style={{color:'white',textDecoration:'none'}} >
+              logout
             </Nav.Link>
           </Nav>
         </Container>
