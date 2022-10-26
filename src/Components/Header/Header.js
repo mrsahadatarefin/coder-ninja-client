@@ -11,24 +11,24 @@ const Header = () => {
         <Container style={{ color: "white" }}>
           <Navbar.Brand>
             {" "}
-            <Link to={"/"}>Coder Ninja</Link>
+            <Link to={"/"} style={{color:'red',textDecoration:'none'}}>Coder Ninja</Link>
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link>
               {" "}
-              <Link to={"/"}>Home</Link>
+              <Link to={"/"} style={{color:'white',textDecoration:'none'}}>Home</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to={"/course"}>Course</Link>
+              <Link to={"/course"} style={{color:'white',textDecoration:'none'}}>Course</Link>
             </Nav.Link>
             <Nav.Link>
-              <Link to={"/faq"}>FAQ</Link>{" "}
+              <Link to={"/faq"} style={{color:'white',textDecoration:'none'}}>FAQ</Link>{" "}
             </Nav.Link>
             <Nav.Link>
-              <Link to={"/register"}>Register</Link>{" "}
+              <Link to={"/register"} style={{color:'white',textDecoration:'none'}}>Register</Link>{" "}
             </Nav.Link>
             <Nav.Link>
-              <Link to={"login"}>Login</Link>{" "}
+              <Link to={"login"} style={{color:'white',textDecoration:'none'}}>Login</Link>{" "}
             </Nav.Link>
           </Nav>
         </Container>

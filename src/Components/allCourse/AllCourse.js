@@ -13,8 +13,8 @@ const AllCourse = ({ course }) => {
         <Row>
           <Col lg="4">
             <div style={{ margin: "20px" }}>
-              <h4>
-                <Link to={`/details/${id}`}>{name} </Link>
+              <h4  style={{ margin: "20px" }}>
+                <Link to={`/details/${id}`} style={{color:'black',margin:'20px'}}>{name} </Link>
               </h4>
             </div>
           </Col>
