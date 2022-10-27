@@ -5,9 +5,9 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/Authprovider/AuthProvider";
-
+import {FaUser} from 'react-icons/fa';
 const Header = () => {
-  const {logOut} = useContext(AuthContext)
+  const {logOut,user} = useContext(AuthContext)
   const handleLogOut= ()=>{
 logOut()
 .then(()=>{})
@@ -38,11 +38,23 @@ logOut()
             </Nav.Link>
             <Nav.Link>
               <Link to={"login"} style={{color:'white',textDecoration:'none'}}>Login</Link>{" "}
+              <Link onClick={handleLogOut}  style={{color:'white',textDecoration:'none'}}> logout</Link>
             </Nav.Link>
-            <Nav.Link onClick={handleLogOut}  style={{color:'white',textDecoration:'none'}} >
-              logout
-            </Nav.Link>
+           
+              
+            
+            
           </Nav>
+          <Nav>
+          <Nav.Link>
+            {user?.displayName}
+          </Nav.Link>
+          <Nav.Link style={{height:'40'}} >
+           {/* {user.photoURL} */}
+            <FaUser></FaUser>
+          </Nav.Link>
+          </Nav>
+
         </Container>
       </Navbar>
     </div>
