@@ -7,7 +7,9 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/Authprovider/AuthProvider";
 import { FaUser } from "react-icons/fa";
 const Header = () => {
+  
   const handleButton =()=>{
+    
     
 
   }
@@ -51,6 +53,16 @@ const Header = () => {
                 FAQ
               </Link>{" "}
             </Nav.Link>
+
+
+            {
+              user? <Nav.Link> <Link
+              onClick={handleLogOut}
+              style={{ color: "white", textDecoration: "none" }}
+            >
+              {" "}
+              logout
+            </Link> </Nav.Link>:<>
             <Nav.Link>
               <Link
                 to={"/register"}
@@ -66,14 +78,19 @@ const Header = () => {
               >
                 Login
               </Link>{" "}
-              <Link
-                onClick={handleLogOut}
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                {" "}
-                logout
-              </Link>
+              
             </Nav.Link>
+            
+            
+            
+            </>
+
+
+
+
+            }
+            
+            
           </Nav>
           <Nav>
             <Nav.Link>{user?.displayName}</Nav.Link>

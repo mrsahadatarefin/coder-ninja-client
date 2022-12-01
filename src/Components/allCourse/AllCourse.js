@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const AllCourse = ({ course }) => {
-  const { id, name, title, description, image } = course;
+  const { _id, name, title, description, image } = course;
 
   return (
     
@@ -14,7 +14,7 @@ const AllCourse = ({ course }) => {
           <Col lg="4">
             <div style={ {height:"300px"}}>
               <h4>
-                <Link to={`/details/${id}`}  style={{color:'black',margin:'20px'}}>{name} </Link>
+                <Link to={`/details/${_id}`}  style={{color:'black',margin:'20px'}}>{name} </Link>
               </h4>
             </div>
           </Col>
@@ -33,7 +33,7 @@ const AllCourse = ({ course }) => {
                   <Card.Title>{title}</Card.Title>
                   <Card.Text>{description}</Card.Text>
                   <Button variant="outline-primary">
-                    <Link to={`/details/${id}`}>Details </Link>
+                    <Link to={`/details/${_id}`}>Details </Link>
                   </Button>
                 </Card.Body>
               </Card>

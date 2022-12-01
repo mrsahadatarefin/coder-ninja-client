@@ -1,9 +1,10 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 const CourseD = () => {
     const Details=useLoaderData()
-    const{id,name,title,description,image} = Details
+    const{_id,name,title,description,image} = Details
     
 
     return (
@@ -16,6 +17,8 @@ const CourseD = () => {
           <Card.Text>
            {description}
           </Card.Text>
+          <Button variant="warning" > 
+          <Link to={`/checkout/${_id}`}>Get premium</Link></Button>{' '}
         </Card.Body>
       </Card>
        </div>
