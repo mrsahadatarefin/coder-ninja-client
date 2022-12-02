@@ -6,14 +6,15 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Contexts/Authprovider/AuthProvider";
 import { FaUser } from "react-icons/fa";
+import { useState } from "react";
+import { Button } from "react-bootstrap";
 const Header = () => {
-  
-  const handleButton =()=>{
-    
-    
-
-  }
+  const handleButton = () => {};
   const { logOut, user } = useContext(AuthContext);
+  const [isDark, setDark] = useState(false);
+
+  const toggleDark = () => setDark(!isDark);
+
   const handleLogOut = () => {
     logOut()
       .then(() => {})
@@ -54,43 +55,41 @@ const Header = () => {
               </Link>{" "}
             </Nav.Link>
 
+            <Button  onClick={toggleDark}>{isDark ? "Dark" : "Light"}</Button>
 
-            {
-              user? <Nav.Link> <Link
-              onClick={handleLogOut}
-              style={{ color: "white", textDecoration: "none" }}
-            >
-              {" "}
-              logout
-            </Link> </Nav.Link>:<>
-            <Nav.Link>
-              <Link
-                to={"/register"}
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                Register
-              </Link>{" "}
-            </Nav.Link>
-            <Nav.Link>
-              <Link
-                to={"login"}
-                style={{ color: "white", textDecoration: "none" }}
-              >
-                Login
-              </Link>{" "}
-              
-            </Nav.Link>
-            
-            
-            
-            </>
-
-
-
-
-            }
-            
-            
+            {user ? (
+              <Nav.Link>
+                {" "}
+                <Link
+                  onClick={handleLogOut}
+                  style={{ color: "white", textDecoration: "none" }}
+                >
+                  {" "}
+                  logout
+                </Link>{" "}
+              </Nav.Link>
+            ) : (
+              <>
+                <Nav.Link>
+                  <Link
+                    to={"/register"}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    Register
+                  </Link>{" "}
+                </Nav.Link>
+                <Nav.Link>
+                  <Link
+                    to={"login"}
+                    style={{ color: "white", textDecoration: "none" }}
+                  >
+                    Login
+                  </Link>{" "}
+                 
+                </Nav.Link>
+                
+              </>
+            )}
           </Nav>
           <Nav>
             <Nav.Link>{user?.displayName}</Nav.Link>
@@ -98,7 +97,6 @@ const Header = () => {
               {/* {user.photoURL} */}
               <FaUser></FaUser>
             </Nav.Link>
-            
           </Nav>
         </Container>
       </Navbar>
