@@ -24,13 +24,13 @@ export const router = createBrowserRouter([
             <Course></Course>
           </PriviteRoute>
         ),
-        loader: () => fetch("http://localhost:5000/products"),
+        loader: () => fetch("https://coder-ninja-server-6.vercel.app/products"),
       },
       {
         path: "/details/:id",
         element: <CourseD></CourseD>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/product/${params.id}`),
+          fetch(`https://coder-ninja-server-6.vercel.app/product/${params.id}`),
       },
 
       {
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         path:"/checkout/:id",
         element:<PriviteRoute><Checkout></Checkout></PriviteRoute>,
         loader:({params})=>
-        fetch(`http://localhost:5000/product/${params.id}`),
+        fetch(`https://coder-ninja-server-6.vercel.app/product/${params.id}`),
       },
       {
         path: "/faq",
