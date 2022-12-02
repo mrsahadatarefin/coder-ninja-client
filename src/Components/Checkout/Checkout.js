@@ -10,28 +10,20 @@ const Checkout = () => {
 
   console.log(courses);
   return (
-    <div>
-        <Table striped>
-      <thead>
-        <tr>
-          
-          
-          <th> Name</th>
-          <th>Course</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          
-          <td>{user?.displayName}</td>
-          <td>{name}</td>
-          <td>PRice:{price} $</td>
-        </tr>
+    <div style={{ display:'grid',justifyItems:"center",margin:"20px"}} >
+<Card style={{ width: '70rem' }}>
+        <Card.Img  style={{ height:"50vh"}} src={image} />
+        <Card.Body>
+
+        <Card.Title> User name: {user.displayName}</Card.Title>
+        <Card.Title> Course name : {name}</Card.Title>
+        <Card.Title> Price: {price} $</Card.Title>
        
-      </tbody>
-    </Table>
-    </div>
+         
+          
+        </Card.Body>
+      </Card>
+       </div>
   );
 };
 
